@@ -1,0 +1,50 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<head> 
+<script type="text/x-mathjax-config"> 
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}}); 
+</script> 
+<script type="text/javascript" 
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> 
+</script> 
+</script> 
+</head> 
+
+
+
+<button onclick="myFunction()">Generate Question</button> 
+
+<br> 
+<br> 
+<p id="demo2"></p> 
+<hr> 
+<p id="demo"></p> 
+
+<script> 
+function myFunction() { 
+var a = Math.floor((Math.random() * 10) + 1); 
+var b = Math.floor((Math.random() * 10) + 1); 
+var c = Math.floor((Math.random() * 10) + 1); 
+var x = Math.floor((Math.random() * 10) + 1); 
+var y = Math.floor((Math.random() * 10) + 1); 
+var z = Math.floor((Math.random() * 10) + 1); 
+
+var dot = (a*x)+(b*y)+(c*z); 
+
+
+
+
+
+document.getElementById("demo2").innerHTML = "Find the  solution to the dot product (" + a + ", " + b + ", " + c + ")" + "$\. \cdot$" + "(" + x + ", " + y + ", " + z + ")"; 
+
+document.getElementById("demo").innerHTML = "Solution: (" + a + ", " + b + ", " + c + ")" + "$\\cdot$" + "(" + x + ", " + y + ", " + z + ") = " + dot; 
+
+MathJax.Hub.Queue(['Typeset', MathJax.Hub, ["demo2","demo"]]); 
+
+} 
+</script> 
+
+</body> 
+</html> 

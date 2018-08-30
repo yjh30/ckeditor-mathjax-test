@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CKEditor Sample</title>
+    <script src="../jquery.min.js"></script>
+    <link rel="stylesheet" href="../question.css">
+    <style>* { margin: 0; padding: 0; font-size: 12px; }</style>
+    <script>
+    $.fn.insertAtCursor = function(myValue) {
+        var $t = $(this)[0];
+        if (document.selection) {
+            this.focus();
+            sel = document.selection.createRange();
+            sel.text = myValue;
+            this.focus();
+        } else if ($t.selectionStart || $t.selectionStart == '0') {
+            var startPos = $t.selectionStart;
+            var endPos = $t.selectionEnd;
+            var scrollTop = $t.scrollTop;
+            $t.value = $t.value.substring(0, startPos) + myValue + $t.value.substring(endPos, $t.value.length);
+            this.focus();
+            $t.selectionStart = startPos + myValue.length;
+            $t.selectionEnd = startPos + myValue.length;
+            $t.scrollTop = scrollTop;
+        } else {
+            this.value += myValue;
+            this.focus();
+        }
+    }
+    </script>
+    <script>
+    window.MathJax = {
+        showProcessingMessages: false,
+        messageStyle: "none",
+        tex2jax: {
+            inlineMath: [
+                ['$', '$'],
+                ["\\(", "\\)"]
+            ],
+            processEscapes: true
+        },
+        "fast-preview": {
+            disabled: true
+        },
+        CommonHTML: {
+            linebreaks: {
+                automatic: true
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            }
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
+        },
+        TeX: {
+            noErrors: {
+                disabled: true
+            }
+        },
+        MathMenu: {
+            styles: {
+                ".MathJax_Menu": {
+                    "z-index": 2001
+                }
+            }
+        },
+        AuthorInit: function() {
+            MathJax.Hub.Register.StartupHook("MathMenu Ready", function() {
+                MathJax.Menu.BGSTYLE["z-index"] = 2000;
+            });
+            MathJax.Hub.processSectionDelay = 0;
+        }
+    }
+    </script>
+    <script src="//static.kaike.la/school/plugins/mathjax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+    <script>
+        // MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    </script>
+    <script src="../ckeditor.js"></script>
+</head>
+
+<body id="main">
+    <div id="editor">
+        阅读下面文字，按要求答题。<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 人生是一条漫长而悠远的路。只因漫长、<BDO class=mathjye-underpoint>曲</BDO>折，<BDO class=mathjye-underpoint>坎</BDO>坷才有悄然面对生活的智慧与执着。人生是路，成长亦是路，只不过，人生之路须以成长之路作为启程，一颗颗年少的心在此奔波、跋陟。每一步前行，需要海浪的洗礼，需要雨露的润泽，需要阳光的照曜，才能到达成功的彼岸，嗅到花朵的芬芳。<br/>（1）请将下面句子用楷书准确、规范地抄写在田字格内。<br/>达成功彼岸，嗅花朵芬芳。<br/>（2）给文段中加点的字注音。<br/><BDO class=mathjye-underpoint>曲</BDO>折<!--BA--><div class='quizPutTag' contenteditable='true'>&nbsp;</div><!--EA-->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BDO class=mathjye-underpoint>坎</BDO>坷<!--BA--><div class='quizPutTag' contenteditable='true'>&nbsp;</div><!--EA--><br/>（3）找出文中的两个错别字并加以改正。<br/><!--BA--><div class='quizPutTag' contenteditable='true'>&nbsp;</div><!--EA-->改为<!--BA--><div class='quizPutTag' contenteditable='true'>&nbsp;</div><!--EA-->；<!--BA--><div class='quizPutTag' contenteditable='true'>&nbsp;</div><!--EA-->改为<!--BA--><div class='quizPutTag' contenteditable='true'>&nbsp;</div><!--EA-->。
+    </div>
+    <div>
+        <button>获取编辑器内容</button>
+    </div>
+    <div id="editor-source-code" style="margin-top: 50px;"></div>
+
+    <div>阅读下面文字，按要求答题。<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 人生是一条漫长而悠远的路。只因漫长、<BDO class=mathjye-underpoint>曲</BDO>折，<BDO class=mathjye-underpoint>坎</BDO>坷才有悄然面对生活的智慧与执着。人生是路，成长亦是路，只不过，人生之路须以成长之路作为启程，一颗颗年少的心在此奔波、跋陟。每一步前行，需要海浪的洗礼，需要雨露的润泽，需要阳光的照曜，才能到达成功的彼岸，嗅到花朵的芬芳。<br/>（1）请将下面句子用楷书准确、规范地抄写在田字格内。<br/>达成功彼岸，嗅花朵芬芳。<br/>（2）给文段中加点的字注音。<br/><BDO class=mathjye-underpoint>曲</BDO>折<!--BA--><div class='quizPutTag' contenteditable='true'>&nbsp;</div><!--EA-->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BDO class=mathjye-underpoint>坎</BDO>坷<!--BA--><div class='quizPutTag' contenteditable='true'>&nbsp;</div><!--EA--><br/>（3）找出文中的两个错别字并加以改正。<br/><!--BA--><div class='quizPutTag' contenteditable='true'>&nbsp;</div><!--EA-->改为<!--BA--><div class='quizPutTag' contenteditable='true'>&nbsp;</div><!--EA-->；<!--BA--><div class='quizPutTag' contenteditable='true'>&nbsp;</div><!--EA-->改为<!--BA--><div class='quizPutTag' contenteditable='true'>&nbsp;</div><!--EA-->。</div>
+</body>
+<script>
+    let editor
+    CKEDITOR.disableAutoInline = true;
+    CKEDITOR.config.allowedContent = true
+
+    CKEDITOR.replace('editor', {
+        extraPlugins: 'mathjax,lineheight',
+        customConfig: '../math_config.js',
+        mathJaxLib: '//static.kaike.la/school/plugins/mathjax/MathJax.js?config=TeX-AMS_HTML-full'
+    });
+
+    editor = CKEDITOR.instances.editor
+    editor.setData(document.querySelector('#editor').innerHTML)
+
+    // 获取富文本纯文本，公式实体会被忽略
+    setTimeout(() => {
+        console.log(editor.document.getBody().getText())
+        console.log(editor.document.getBody().getText().length)
+    }, 5000)
+
+    // 模拟xml请求获取公式富文本后正确显示公式
+    setTimeout(() => {
+        $('#editor-source-code').html('<p><span class="math-tex">\\(x^{2}\\)</span></p>')
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    },2000)
+
+    // 获取编辑器富文本内容
+    document.querySelector('button').addEventListener('click', function() {
+        var result = editor.getData()
+        $('#editor-source-code').html(result)
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    })
+
+</script>
+</body>
+
+</html>

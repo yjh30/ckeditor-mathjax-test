@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <style>
+    button {
+        width: 50px;
+        height: 60px;
+        margin: 0px 8px 8px 0px;
+        vertical-align: top;
+    }
+    </style>
+    <script src="../jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML-full"></script>
+    <script>
+    $(function() { $("button").on("click", function() { parent.postMessage($(this).data("form"), "*"); }); })
+    </script>
+</head>
+
+<body>
+    <div style="height: 100%">
+        <button data-form="x_{a}"><span class="math-tex" style="font-size: 20px">\(x_{a}\)</span></button>
+        <button data-form="x^{b}"><span class="math-tex" style="font-size: 20px">\(x^{b}\)</span></button>
+        <button data-form="x_{a}^{b}"><span class="math-tex" style="font-size: 20px">\(x_{a}^{b}\)</span></button>
+        <button data-form="\bar{x}"><span class="math-tex" style="font-size: 20px">\(\bar{x}\)</span></button>
+        <button data-form="\tilde{x}"><span class="math-tex" style="font-size: 20px">\(\tilde{x}\)</span></button>
+        <button data-form="\frac{a}{b}"><span class="math-tex" style="font-size: 20px">\(\frac{a}{b}\)</span></button>
+        <button data-form="\sqrt{x}"><span class="math-tex" style="font-size: 20px">\(\sqrt{x}\)</span></button>
+        <button data-form="\sqrt[n]{x}"><span class="math-tex" style="font-size: 20px">\(\sqrt[n]{x}\)</span></button>
+        <button data-form="\bigcap_{a}^{b}"><span class="math-tex" style="font-size: 20px">\(\bigcap_{a}^{b}\)</span></button>
+        <button data-form="\bigcup_{a}^{b}"><span class="math-tex" style="font-size: 20px">\(\bigcup_{a}^{b}\)</span></button>
+        <button data-form="\prod_{a}^{b}"><span class="math-tex" style="font-size: 20px">\(\prod_{a}^{b}\)</span></button>
+        <button data-form="\coprod_{a}^{b}"><span class="math-tex" style="font-size: 20px">\(\coprod_{a}^{b}\)</span></button>
+        <button data-form="\left( x \right)"><span class="math-tex" style="font-size: 20px">\(\left( x \right)\)</span></button>
+        <button data-form="\left[ x \right]"><span class="math-tex" style="font-size: 20px">\(\left[ x \right]\)</span></button>
+        <button data-form="\left\{ x \right\}"><span class="math-tex" style="font-size: 20px">\(\left\{ x \right\}\)</span></button>
+        <button data-form="\left| x \right|"><span class="math-tex" style="font-size: 20px">\(\left| x \right|\)</span></button>
+        <button data-form="\int_{a}^{b}"><span class="math-tex" style="font-size: 20px">\(\int_{a}^{b}\)</span></button>
+        <button data-form="\oint_{a}^{b}"><span class="math-tex" style="font-size: 20px">\(\oint_{a}^{b}\)</span></button>
+        <button data-form="\sum_{a}^{b}{x}"><span class="math-tex" style="font-size: 15px">\(\sum_{a}^{b}{x}\)</span></button>
+        <button data-form="\lim\limits_{a \rightarrow b}{x}"><span class="math-tex" style="font-size: 12px;">\(\lim\limits_{a \rightarrow b}{x}\)</span></button>
+        <button data-form="\angle"><span class="math-tex" style="font-size: 20px">\(\angle\)</span></button>
+        <button data-form="\triangle"><span class="math-tex" style="font-size: 20px">\(\triangle\)</span></button>
+        <button data-form="\left\{ {_{}^{}} \right."><span class="math-tex" style="font-size: 20px">\(\left\{ {_{}^{}} \right.\)</span></button>
+    </div>
+</body>
+
+</html>
